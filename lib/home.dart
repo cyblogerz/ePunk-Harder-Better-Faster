@@ -51,43 +51,43 @@ class Home extends StatelessWidget {
                   color: Colors.blueAccent,
                 ),
                 Tile(
-                  title: "Work It",
+                  title: "Faster",
+                  color: Colors.cyan,
+                ),
+                Tile(
+                  title: "Stronger",
+                  color: Colors.cyanAccent,
+                ),
+                Tile(
+                  title: "More than",
+                  color: Colors.green,
+                ),
+                Tile(
+                  title: "Hour",
+                  color: Colors.greenAccent,
+                ),
+                Tile(
+                  title: "Our",
+                  color: Colors.yellow,
+                ),
+                Tile(
+                  title: "Never",
+                  color: Colors.yellowAccent,
+                ),
+                Tile(
+                  title: "Ever",
+                  color: Colors.orange,
+                ),
+                Tile(
+                  title: "After",
+                  color: Colors.orangeAccent,
+                ),
+                Tile(
+                  title: "Work Is",
                   color: Colors.red,
                 ),
                 Tile(
-                  title: "Make It",
-                  color: Colors.red,
-                ),
-                Tile(
-                  title: "Work It",
-                  color: Colors.red,
-                ),
-                Tile(
-                  title: "Make It",
-                  color: Colors.red,
-                ),
-                Tile(
-                  title: "Work It",
-                  color: Colors.red,
-                ),
-                Tile(
-                  title: "Make It",
-                  color: Colors.red,
-                ),
-                Tile(
-                  title: "Work It",
-                  color: Colors.red,
-                ),
-                Tile(
-                  title: "Make It",
-                  color: Colors.red,
-                ),
-                Tile(
-                  title: "Work It",
-                  color: Colors.red,
-                ),
-                Tile(
-                  title: "Make It",
+                  title: "Over",
                   color: Colors.red,
                 ),
               ],
