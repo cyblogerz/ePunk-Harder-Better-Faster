@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class Tile extends StatelessWidget {
   final String title;
   final Color color;
+  final String mId;
   const Tile({
     Key? key,
     required this.title,
     required this.color,
+    required this.mId,
   }) : super(key: key);
 
   @override
