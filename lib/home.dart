@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'widgets/tiles.dart';
 
 class Home extends StatelessWidget {
