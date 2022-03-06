@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 
-final player = AudioPlayer();
-
 class Tile extends StatelessWidget {
   final String title;
   final Color color;
+  late final AudioPlayer player;
   final String mId;
-  const Tile({
+
+  Tile({
     Key? key,
     required this.title,
+    required this.player,
     required this.color,
     required this.mId,
   }) : super(key: key);
@@ -19,7 +20,8 @@ class Tile extends StatelessWidget {
     return ElevatedButton(
         child: Center(child: Text(title)),
         onPressed: () async {
-          var duration = await player.setAsset('assets/keySounds/after.mp3');
+          var duration = await player.setAsset('assets/keySounds/$mId.mp3');
+          player.play();
         },
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all<Color>(color),
