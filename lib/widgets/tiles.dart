@@ -3,6 +3,7 @@ import 'package:just_audio/just_audio.dart';
 
 class Tile extends StatelessWidget {
   final String title;
+  final String pid;
   final Color color;
   late final AudioPlayer player;
   final String mId;
@@ -10,6 +11,7 @@ class Tile extends StatelessWidget {
   Tile({
     Key? key,
     required this.title,
+    this.pid = '1',
     required this.player,
     required this.color,
     required this.mId,
@@ -20,7 +22,7 @@ class Tile extends StatelessWidget {
     return ElevatedButton(
         child: Center(child: Text(title)),
         onPressed: () async {
-          var duration = await player.setAsset('assets/keySounds/$mId.mp3');
+          var duration = await player.setAsset('assets/keySounds/$mId$pid.mp3');
           player.play();
         },
         style: ButtonStyle(
