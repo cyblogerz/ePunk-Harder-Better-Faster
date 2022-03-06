@@ -3,6 +3,8 @@ import 'package:just_audio/just_audio.dart';
 
 import 'home.dart';
 
+bool isPlaying = false;
+
 void main() {
   runApp(const MyApp());
 }
@@ -32,6 +34,12 @@ late AudioPlayer player15;
 late AudioPlayer player16;
 
 class _MyAppState extends State<MyApp> {
+  void setPlayState() {
+    setState(() {
+      isPlaying = !isPlaying;
+    });
+  }
+
   //Create initState and dispose
   @override
   void initState() {
@@ -81,6 +89,8 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       theme: ThemeData.dark(),
       home: Home(
+        isplaying: isPlaying,
+        playCheck: setPlayState,
         player1: player1,
         player2: player2,
         player3: player3,

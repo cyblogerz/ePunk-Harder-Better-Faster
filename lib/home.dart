@@ -3,6 +3,8 @@ import 'package:just_audio/just_audio.dart';
 import 'widgets/tiles.dart';
 
 class Home extends StatelessWidget {
+  final Function playCheck;
+  final bool isplaying;
   late final AudioPlayer player1;
   late final AudioPlayer player2;
   late final AudioPlayer player3;
@@ -21,6 +23,8 @@ class Home extends StatelessWidget {
   late final AudioPlayer player16;
   Home({
     Key? key,
+    required this.isplaying,
+    required this.playCheck,
     required this.player1,
     required this.player2,
     required this.player3,
@@ -42,12 +46,23 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    var topPad = size.height * 0.1;
+    var topPad = size.height * 0.05;
 
     /*24 is for notification bar on Android*/
     final double itemHeight = size.height * 0.08;
     final double itemWidth = (size.width / 2);
     return Scaffold(
+      appBar: AppBar(
+        title: Text('ePunk'),
+        actions: <Widget>[
+          IconButton(
+              icon: isplaying ? Icon(Icons.play_arrow) : Icon(Icons.pause),
+              onPressed: () {
+                playCheck();
+              })
+        ],
+      ),
+      drawer: Drawer(),
       body: Column(
         children: [
           Padding(
