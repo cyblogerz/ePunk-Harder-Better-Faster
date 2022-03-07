@@ -4,7 +4,7 @@ import 'package:just_audio/just_audio.dart';
 import 'home.dart';
 
 bool isPlaying = false;
-
+String pId = "1";
 void main() {
   runApp(const MyApp());
 }
@@ -37,6 +37,12 @@ class _MyAppState extends State<MyApp> {
   void setPlayState() {
     setState(() {
       isPlaying = !isPlaying;
+    });
+  }
+
+  void buttonPressed(int bid) {
+    setState(() {
+      pId = bid.toString();
     });
   }
 
@@ -89,6 +95,8 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       theme: ThemeData.dark(),
       home: Home(
+        pid: pId,
+        buttonPress: buttonPressed,
         isplaying: isPlaying,
         playCheck: setPlayState,
         player1: player1,

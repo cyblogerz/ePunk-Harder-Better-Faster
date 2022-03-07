@@ -4,6 +4,8 @@ import 'widgets/tiles.dart';
 
 class Home extends StatelessWidget {
   final Function playCheck;
+  final Function buttonPress;
+  final String pid;
   final bool isplaying;
   late final AudioPlayer player1;
   late final AudioPlayer player2;
@@ -41,6 +43,8 @@ class Home extends StatelessWidget {
     required this.player14,
     required this.player15,
     required this.player16,
+    required this.buttonPress,
+    required this.pid,
   }) : super(key: key);
 
   @override
@@ -76,96 +80,112 @@ class Home extends StatelessWidget {
               crossAxisSpacing: 10.0,
               children: <Widget>[
                 Tile(
+                  pid: pid,
                   title: "Work It",
                   color: Colors.red,
                   mId: "WorkIt",
                   player: player1,
                 ),
                 Tile(
+                  pid: pid,
                   title: "Make It",
                   color: Colors.redAccent,
                   mId: "MakeIt",
                   player: player2,
                 ),
                 Tile(
+                  pid: pid,
                   title: "Do It",
                   color: Colors.purple,
                   mId: "DoIt",
                   player: player3,
                 ),
                 Tile(
+                  pid: pid,
                   title: "Makes Us",
                   color: Colors.purpleAccent,
                   player: player4,
                   mId: "MakesUs",
                 ),
                 Tile(
+                  pid: pid,
                   title: "Harder",
                   color: Colors.blue,
                   mId: "Harder",
                   player: player5,
                 ),
                 Tile(
+                  pid: pid,
                   title: "Better",
                   color: Colors.blueAccent,
                   mId: "Better",
                   player: player6,
                 ),
                 Tile(
+                  pid: pid,
                   title: "Faster",
                   color: Colors.cyan,
                   mId: "Faster",
                   player: player7,
                 ),
                 Tile(
+                  pid: pid,
                   title: "Stronger",
                   color: Colors.cyanAccent,
                   mId: "Stronger",
                   player: player8,
                 ),
                 Tile(
+                  pid: pid,
                   title: "More than",
                   color: Colors.green,
                   mId: "MoreThan",
                   player: player9,
                 ),
                 Tile(
+                  pid: pid,
                   title: "Hour",
                   color: Colors.greenAccent,
                   mId: "Hour",
                   player: player10,
                 ),
                 Tile(
+                  pid: pid,
                   title: "Our",
                   color: Colors.yellow,
                   mId: "Our",
                   player: player11,
                 ),
                 Tile(
+                  pid: pid,
                   title: "Never",
                   color: Colors.yellowAccent,
                   mId: "Never",
                   player: player12,
                 ),
                 Tile(
+                  pid: pid,
                   title: "Ever",
                   color: Colors.orange,
                   mId: "Ever",
                   player: player13,
                 ),
                 Tile(
+                  pid: pid,
                   title: "After",
                   color: Colors.orangeAccent,
                   mId: "After",
                   player: player14,
                 ),
                 Tile(
+                  pid: pid,
                   title: "Work Is",
                   color: Colors.red,
                   mId: "WorkIs",
                   player: player15,
                 ),
                 Tile(
+                  pid: pid,
                   title: "Over",
                   color: Colors.red,
                   mId: "Over",
@@ -179,9 +199,21 @@ class Home extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                FloatingActionButton(onPressed: () {}, child: Text('1')),
-                FloatingActionButton(onPressed: () {}, child: Text('2')),
-                FloatingActionButton(onPressed: () {}, child: Text('3')),
+                FloatingActionButton(
+                    onPressed: () {
+                      buttonPress(1);
+                    },
+                    child: Text('1')),
+                FloatingActionButton(
+                    onPressed: () {
+                      buttonPress(2);
+                    },
+                    child: Text('2')),
+                FloatingActionButton(
+                    onPressed: () {
+                      buttonPress(3);
+                    },
+                    child: Text('3')),
               ],
             ),
           )

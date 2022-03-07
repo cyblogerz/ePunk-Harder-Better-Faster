@@ -11,7 +11,7 @@ class Tile extends StatelessWidget {
   Tile({
     Key? key,
     required this.title,
-    this.pid = '1',
+    this.pid = '3',
     required this.player,
     required this.color,
     required this.mId,
