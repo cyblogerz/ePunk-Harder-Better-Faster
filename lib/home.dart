@@ -57,8 +57,25 @@ class Home extends StatelessWidget {
     final double itemHeight = size.height * 0.08;
     final double itemWidth = (size.width / 2);
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: Text('ePunk'),
+        elevation: 0.0,
+        backgroundColor: Colors.transparent,
+        title: Row(
+          children: <Widget>[
+            Text(
+              'E',
+              style: TextStyle(
+                fontSize: 20,
+              ),
+            ),
+            Icon(
+              Icons.bolt,
+              color: Colors.yellow,
+            ),
+            Text("Punk")
+          ],
+        ),
         actions: <Widget>[
           IconButton(
               icon: !isplaying ? Icon(Icons.play_arrow) : Icon(Icons.pause),
@@ -68,150 +85,157 @@ class Home extends StatelessWidget {
         ],
       ),
       drawer: Drawer(),
-      body: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.only(left: 20, right: 20.0, top: topPad),
-            child: GridView.count(
-              childAspectRatio: (itemWidth / itemHeight),
-              physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              crossAxisCount: 2,
-              mainAxisSpacing: 10.0,
-              crossAxisSpacing: 10.0,
-              children: <Widget>[
-                Tile(
-                  pid: pid,
-                  title: "Work It",
-                  color: Colors.red.withAlpha(150),
-                  mId: "WorkIt",
-                  player: player1,
-                ),
-                Tile(
-                  pid: pid,
-                  title: "Make It",
-                  color: Colors.redAccent.withAlpha(150),
-                  mId: "MakeIt",
-                  player: player2,
-                ),
-                Tile(
-                  pid: pid,
-                  title: "Do It",
-                  color: Colors.purple.withAlpha(150),
-                  mId: "DoIt",
-                  player: player3,
-                ),
-                Tile(
-                  pid: pid,
-                  title: "Makes Us",
-                  color: Colors.purpleAccent.withAlpha(150),
-                  player: player4,
-                  mId: "MakesUs",
-                ),
-                Tile(
-                  pid: pid,
-                  title: "Harder",
-                  color: Colors.blue.withAlpha(150),
-                  mId: "Harder",
-                  player: player5,
-                ),
-                Tile(
-                  pid: pid,
-                  title: "Better",
-                  color: Colors.blueAccent.withAlpha(150),
-                  mId: "Better",
-                  player: player6,
-                ),
-                Tile(
-                  pid: pid,
-                  title: "Faster",
-                  color: Colors.cyan.withAlpha(150),
-                  mId: "Faster",
-                  player: player7,
-                ),
-                Tile(
-                  pid: pid,
-                  title: "Stronger",
-                  color: Colors.cyanAccent.withAlpha(150),
-                  mId: "Stronger",
-                  player: player8,
-                ),
-                Tile(
-                  pid: pid,
-                  title: "More than",
-                  color: Colors.green.withAlpha(150),
-                  mId: "MoreThan",
-                  player: player9,
-                ),
-                Tile(
-                  pid: pid,
-                  title: "Hour",
-                  color: Colors.greenAccent.withAlpha(150),
-                  mId: "Hour",
-                  player: player10,
-                ),
-                Tile(
-                  pid: pid,
-                  title: "Our",
-                  color: Colors.yellow.withAlpha(150),
-                  mId: "Our",
-                  player: player11,
-                ),
-                Tile(
-                  pid: pid,
-                  title: "Never",
-                  color: Colors.yellowAccent.withAlpha(150),
-                  mId: "Never",
-                  player: player12,
-                ),
-                Tile(
-                  pid: pid,
-                  title: "Ever",
-                  color: Colors.orange.withAlpha(150),
-                  mId: "Ever",
-                  player: player13,
-                ),
-                Tile(
-                  pid: pid,
-                  title: "After",
-                  color: Colors.orangeAccent.withAlpha(150),
-                  mId: "After",
-                  player: player14,
-                ),
-                Tile(
-                  pid: pid,
-                  title: "Work Is",
-                  color: Colors.red.withAlpha(150),
-                  mId: "WorkIs",
-                  player: player15,
-                ),
-                Tile(
-                  pid: pid,
-                  title: "Over",
-                  color: Colors.red.withAlpha(150),
-                  mId: "Over",
-                  player: player16,
-                ),
-              ],
+      body: Container(
+        constraints: BoxConstraints.expand(),
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/keySounds/bkg.jpg"),
+                fit: BoxFit.cover)),
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: 20, right: 20.0, top: topPad),
+              child: GridView.count(
+                childAspectRatio: (itemWidth / itemHeight),
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                crossAxisCount: 2,
+                mainAxisSpacing: 10.0,
+                crossAxisSpacing: 10.0,
+                children: <Widget>[
+                  Tile(
+                    pid: pid,
+                    title: "Work It",
+                    color: Colors.red.withAlpha(150),
+                    mId: "WorkIt",
+                    player: player1,
+                  ),
+                  Tile(
+                    pid: pid,
+                    title: "Make It",
+                    color: Colors.redAccent.withAlpha(150),
+                    mId: "MakeIt",
+                    player: player2,
+                  ),
+                  Tile(
+                    pid: pid,
+                    title: "Do It",
+                    color: Colors.purple.withAlpha(150),
+                    mId: "DoIt",
+                    player: player3,
+                  ),
+                  Tile(
+                    pid: pid,
+                    title: "Makes Us",
+                    color: Colors.purpleAccent.withAlpha(150),
+                    player: player4,
+                    mId: "MakesUs",
+                  ),
+                  Tile(
+                    pid: pid,
+                    title: "Harder",
+                    color: Colors.blue.withAlpha(150),
+                    mId: "Harder",
+                    player: player5,
+                  ),
+                  Tile(
+                    pid: pid,
+                    title: "Better",
+                    color: Colors.blueAccent.withAlpha(150),
+                    mId: "Better",
+                    player: player6,
+                  ),
+                  Tile(
+                    pid: pid,
+                    title: "Faster",
+                    color: Colors.cyan.withAlpha(150),
+                    mId: "Faster",
+                    player: player7,
+                  ),
+                  Tile(
+                    pid: pid,
+                    title: "Stronger",
+                    color: Colors.cyanAccent.withAlpha(150),
+                    mId: "Stronger",
+                    player: player8,
+                  ),
+                  Tile(
+                    pid: pid,
+                    title: "More than",
+                    color: Colors.green.withAlpha(150),
+                    mId: "MoreThan",
+                    player: player9,
+                  ),
+                  Tile(
+                    pid: pid,
+                    title: "Hour",
+                    color: Colors.greenAccent.withAlpha(150),
+                    mId: "Hour",
+                    player: player10,
+                  ),
+                  Tile(
+                    pid: pid,
+                    title: "Our",
+                    color: Colors.yellow.withAlpha(150),
+                    mId: "Our",
+                    player: player11,
+                  ),
+                  Tile(
+                    pid: pid,
+                    title: "Never",
+                    color: Colors.yellowAccent.withAlpha(150),
+                    mId: "Never",
+                    player: player12,
+                  ),
+                  Tile(
+                    pid: pid,
+                    title: "Ever",
+                    color: Colors.orange.withAlpha(150),
+                    mId: "Ever",
+                    player: player13,
+                  ),
+                  Tile(
+                    pid: pid,
+                    title: "After",
+                    color: Colors.orangeAccent.withAlpha(150),
+                    mId: "After",
+                    player: player14,
+                  ),
+                  Tile(
+                    pid: pid,
+                    title: "Work Is",
+                    color: Colors.red.withAlpha(150),
+                    mId: "WorkIs",
+                    player: player15,
+                  ),
+                  Tile(
+                    pid: pid,
+                    title: "Over",
+                    color: Colors.red.withAlpha(150),
+                    mId: "Over",
+                    player: player16,
+                  ),
+                ],
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 35.0),
-            child: Slider(
-              thumbColor: Colors.pink,
-              inactiveColor: Colors.redAccent,
-              activeColor: Colors.pinkAccent,
-              value: _currentSliderValue,
-              max: 3,
-              min: 1,
-              divisions: 3,
-              label: _currentSliderValue.round().toString(),
-              onChanged: (double value) {
-                buttonPress(value);
-              },
-            ),
-          )
-        ],
+            Padding(
+              padding: const EdgeInsets.only(top: 35.0),
+              child: Slider(
+                thumbColor: Colors.pink,
+                inactiveColor: Colors.redAccent,
+                activeColor: Colors.pinkAccent,
+                value: _currentSliderValue,
+                max: 3,
+                min: 1,
+                divisions: 3,
+                label: _currentSliderValue.round().toString(),
+                onChanged: (double value) {
+                  buttonPress(value);
+                },
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
