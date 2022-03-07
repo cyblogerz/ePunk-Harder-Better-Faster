@@ -40,9 +40,9 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  void buttonPressed(int bid) {
+  void buttonPressed(double bid) {
     setState(() {
-      pId = bid.toString();
+      pId = bid.round().toString();
     });
   }
 

@@ -49,6 +49,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double _currentSliderValue = double.parse(pid);
     var size = MediaQuery.of(context).size;
     var topPad = size.height * 0.05;
 
@@ -60,7 +61,7 @@ class Home extends StatelessWidget {
         title: Text('ePunk'),
         actions: <Widget>[
           IconButton(
-              icon: isplaying ? Icon(Icons.play_arrow) : Icon(Icons.pause),
+              icon: !isplaying ? Icon(Icons.play_arrow) : Icon(Icons.pause),
               onPressed: () {
                 playCheck();
               })
@@ -195,26 +196,15 @@ class Home extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(left: 20, right: 20.0, top: topPad),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                FloatingActionButton(
-                    onPressed: () {
-                      buttonPress(1);
-                    },
-                    child: Text('1')),
-                FloatingActionButton(
-                    onPressed: () {
-                      buttonPress(2);
-                    },
-                    child: Text('2')),
-                FloatingActionButton(
-                    onPressed: () {
-                      buttonPress(3);
-                    },
-                    child: Text('3')),
-              ],
+            padding: const EdgeInsets.only(top: 35.0),
+            child: Slider(
+              value: _currentSliderValue,
+              max: 3,
+              divisions: 3,
+              label: _currentSliderValue.round().toString(),
+              onChanged: (double value) {
+                buttonPress(value);
+              },
             ),
           )
         ],
