@@ -19,20 +19,56 @@ class Tile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-        child: Center(child: Text(title)),
-        onPressed: () async {
-          var duration = await player.setAsset('assets/keySounds/$mId$pid.mp3');
-          player.play();
-        },
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(color),
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-              RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12.0),
-                  side: BorderSide(
-                    color: color,
-                  ))),
-        ));
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: color.withAlpha(60),
+            blurRadius: 10.0,
+            spreadRadius: 2.0,
+            offset: Offset(
+              0.0,
+              3.0,
+            ),
+          ),
+          BoxShadow(
+            color: color.withAlpha(60),
+            blurRadius: 6.0,
+            spreadRadius: 1.0,
+            offset: Offset(
+              0.0,
+              3.0,
+            ),
+          ),
+          BoxShadow(
+            color: color.withAlpha(60),
+            blurRadius: 10.0,
+            spreadRadius: 2.0,
+            offset: Offset(
+              0.0,
+              3.0,
+            ),
+          )
+        ],
+      ),
+      child: ElevatedButton(
+          child: Center(child: Text(title)),
+          onPressed: () async {
+            var duration =
+                await player.setAsset('assets/keySounds/$mId$pid.mp3');
+            player.play();
+          },
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all<Color>(color),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                    side: BorderSide(
+                      width: 4,
+                      color: color,
+                    ))),
+          )),
+    );
   }
 }
